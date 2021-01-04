@@ -22,7 +22,7 @@ define('DB_PASS', '');
 define('DB_NAME', 'n2print');
 
 /**
-define('DB_USER', 'iparwelf');
-define('DB_PASS', 'V22R2q0tkw');
-define('DB_NAME', 'iparwelf_n2print');
+define('DB_USER', '');
+define('DB_PASS', '');
+define('DB_NAME', '');
 */
