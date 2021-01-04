@@ -1,0 +1,143 @@
+<style>
+
+*[role="form"] {
+    max-width: 60%;
+    padding: 15px;
+    margin: 0 auto;
+    /*background-color: #fff;*/
+    border-radius: 0.3em;
+}
+
+</style>
+
+<div class="container">
+
+  <div class="col-lg-12 well">
+
+    <form class="form-horizontal" role="form" action="create/create" method="post">
+<h2>Create your N2 Network Media Account</h2>                
+                <p>&nbsp;</p>
+                <span class="help-block">If you already have an account with us, please login at the<a href="client_login"> login page.</a></span>
+                <p>&nbsp;</p>
+                <h3>Your Personal Details</h3>
+                <p>&nbsp;</p>
+                <!-- /.form-group -->
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">* First Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" name="fname" placeholder="First Name" class="form-control" autofocus required>
+                   </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">* Last Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="lastname" name="lname" placeholder="Last Name" class="form-control" autofocus required>
+                        <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">* E-Mail:</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" name="email" placeholder="Email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">* Telephone:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="phone" name="phone" placeholder="Telephone" class="form-control" autofocus required>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Fax:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="fax" name="fax" placeholder="Fax" class="form-control" autofocus>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Company:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="company" name="company" placeholder="Company" class="form-control" autofocus>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">* Address 1:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="addr1" name="addr1" placeholder="Address 1" class="form-control" autofocus required>
+                    </div>
+                </div> 
+               <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Address 2:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="addr2" name="addr2" placeholder="Address 2" class="form-control" autofocus>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="city" class="col-sm-3 control-label">* City:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="city" name="city" placeholder="City" class="form-control" autofocus required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address2" class="col-sm-3 control-label">* Post Code:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="postcode" name="postcode" placeholder="Post Code" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address2" class="col-sm-3 control-label">* Region / State:</label>
+                    <div class="col-sm-9">
+                        <select id="inputState" name="state" class="form-control" required>
+                        <option selected> --- Please Select --- </option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Labuan">Labuan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Pulau Pinang">Pulau Pinang</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Terengganu">Terengganu</option>
+                        <option value="Wilayah Persekutuan">Wilayah Persekutuan</option>
+                        </select>
+                    </div>
+                </div> 
+               
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">* Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label for="address2" class="col-sm-3 control-label">*Passw confirm:</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="passwordconf" placeholder="Password confirm" class="form-control" required>
+                        <span id='message'></span>
+                    </div>
+                </div>               
+              
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="submit" class="btn btn-warning btn-block">REGISTER</button>
+                        <p>&nbsp;</p>
+                        <span class="help-block">By clicking "REGISTER" I agree to <a href="">N2 Network Media Privacy</a> Policy</span>
+                    </div>
+                </div>
+            </form>
+      <script>
+          $('#password, #passwordconf').on('keyup', function () {
+        if ($('#password').val() == $('#passwordconf').val()) {
+          $('#message').html('Password Match').css('color', 'green');
+        } else 
+          $('#message').html('Password Not Match').css('color', 'red');
+      });
+      </script>
+</div>
+  </div>

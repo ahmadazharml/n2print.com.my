@@ -1,0 +1,79 @@
+		<input type="hidden" id="hiddenid" value="<?php echo $this->itemsView['id']; ?>" />
+		<input type="hidden" id="item_name" value="<?php echo $this->itemsView['item_name']; ?>" />
+		<input type="hidden" id="price" value="<?php echo $this->itemsView['price']; ?>" />
+		<input type="hidden" id="main_pic" value="<?php echo URL . $this->itemsView['main_pic']; ?>" />
+		<input type="hidden" id="description" value="<?php echo $this->itemsView['description']; ?>" />
+
+		<div class="single" style="margin-bottom:5em">
+			<div class="container">
+			<div class="single-top-main">
+	   		<div class="col-md-5 single-top">
+	   		<div class="single-w3agile">
+							
+<div id="picture-frame">
+			<img src="<?php echo URL . $this->itemsView['main_pic']; ?>" data-src="<?php echo URL . $this->itemsView['main_pic']; ?>" alt="" class="img-responsive"/>
+		</div>
+		<script src="<?php echo URL; ?>public/item/js/jquery.zoomtoo.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#picture-frame").zoomToo({
+					magnify: 1
+				});
+			});
+		</script>
+		
+		
+		
+			</div>
+			</div>
+			<div class="col-md-7 single-top-left ">
+								<div class="single-right">
+				<h3><?php echo $this->itemsView['item_name']; ?></h3>
+				
+					
+				 <div class="pr-single">
+				  <p class="reduced "><del><?php echo $this->itemsView['currency']; ?><?php echo $this->itemsView['cancel_price']; ?></del><?php echo $this->itemsView['currency']; ?><?php echo $this->itemsView['price']; ?></p>
+				</div>
+				<div class="block block-w3">
+					<div class="starbox small ghosting"> </div>
+				</div>
+				<p class="in-pa"><?php echo $this->itemsView['description']; ?> </p>
+			   	
+				<ul class="social-top">
+					<li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+					<li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+					<li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+					<li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+				</ul>
+					<div class="add add-3">
+					   <button id="adtocart" class="btn btn-danger my-cart-btn my-cart-b" data-id="" data-name="" data-summary="" data-price="" data-quantity="1" data-image="" style="background:grey">Add to Cart</button>
+					</div>
+							   
+			<div class="clearfix"> </div>
+			</div>
+		 
+
+			</div>
+		   <div class="clearfix"> </div>
+	   </div>	
+				 
+				
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+						
+			var datid = document.getElementById('hiddenid').value;
+		     $("#adtocart").attr('data-id',datid);
+		     var datname = document.getElementById('item_name').value;
+		     $("#adtocart").attr('data-name',datname);
+		     var datprice = document.getElementById('price').value;
+		     $("#adtocart").attr('data-price',datprice);
+		     var picture = document.getElementById('main_pic').value;
+		     $("#adtocart").attr('data-image',picture);	  
+		     var description = document.getElementById('description').value;
+		     $("#adtocart").attr('data-summary',description);   
+	});			
+	
+</script>

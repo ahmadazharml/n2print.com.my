@@ -1,0 +1,119 @@
+<?php Session::init(); ?>
+<?php $id = Session::get('id'); ?> 
+<?php $fname = Session::get('fname'); ?> 
+<?php $lname = Session::get('lname'); ?> 
+<?php $email = Session::get('email'); ?> 
+<?php $password = Session::get('password'); ?>
+  <main class="wrapper main-content" role="main">
+    <div class="grid">
+        <div class="grid__item">
+          
+
+          
+<style type="text/css">
+  @media screen and (min-width: 480px) {
+    .change_password{
+      margin-top: 35px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .change_password{
+      margin-bottom: 35px;
+    }
+  }
+</style>
+<div class="section-header section-header--large">
+  <h1 class="section-header__title">My Account</h1>
+</div>
+
+<div class="grid">
+
+  <div class="grid__item two-thirds medium-down--one-whole">
+    <form action="details/editSave/<?php echo $id; ?>" method="post" id="details_form">
+    <input type="hidden" name="_token" value="jlxU14DHV500bLLto8jJTpEb5S8oMJm7kNAUapVg">
+
+    <div id="AddAddress">
+        <h2>Account Details</h2>
+        
+        <div class="note form-success" id="UpdateSuccess" style="display:none;">
+          Your information has been update successfully
+        </div>
+        <div class="grid">
+
+          <div class="grid__item one-half small--one-whole">
+            <label for="DetailsFirstName">First Name</label>
+            <input type="text" id="DetailsFirstName" class="address_form" name="fname" value="<?php echo $fname; ?>" autocapitalize="words">
+          </div>
+
+          <div class="grid__item one-half small--one-whole">
+            <label for="DetailLastName">Last Name</label>
+            <input type="text" id="DetailLastName" class="address_form" name="lname" value="<?php echo $lname; ?>" autocapitalize="words">
+          </div>
+
+          <div class="grid__item one-half small--one-whole">
+            <label for="DetailEmail">Email</label>
+            <input type="text" id="DetailEmail" class="address_form" name="email" value="<?php echo $email; ?>">
+          </div>
+
+          <!--<div class="grid__item one-half small--one-whole">
+            <label for="DetailPhone">Phone</label>
+            <input type="text" id="DetailPhone" class="address_form" name="details[phone]" value="">
+          </div>-->
+
+        </div>
+        <div class="grid">
+          <div class="grid__item one-half small--one-whole">
+            <label for="DetailPassword">Password</label>
+            <input type="text" placeholder="Password" id="DetailPassword" class="address_form" name="password" value="<?php echo $password; ?>" disabled="disabled">
+          </div>
+
+          <div class="grid__item one-half small--one-whole change_password">
+            <a href="javascript:void(0)" onclick="viewCP();">Change password</a>
+          </div>
+
+          <div class="grid__item one-half small--one-whole confirm-password" style="display:none;">
+            <label for="DetailPasswordConfirm">New password</label>
+            <input type="text" placeholder="New password" id="DetailPasswordConfirm" class="address_form" name="passwordnew">
+          </div>
+        </div>
+
+        <p><input type="submit" class="btn" value="Submit">&nbsp;&nbsp;
+        <a href="javascript:void(0)" onclick="window.history.back();">Cancel</a></p>
+        <hr>
+    </div>
+  </form>
+
+    
+  </div>
+
+  <div class="grid__item one-third medium-down--one-whole">
+    <h4>Primary Address</h4>
+
+    <h5>Ezek Azaruz</h5>
+
+    
+
+    <p><a href="addresses">View Addresses (0)</a></p>
+
+    
+  </div>
+
+</div>
+<script type="text/javascript">
+  
+  function viewCP(){
+    $(".change_password").hide();
+    $("label[for='DetailPassword']").text("Old password");
+    $(".confirm-password").show();
+    $("#DetailPassword").prop("disabled", false);
+
+  }
+</script>
+
+
+          
+        </div>
+    </div>
+
+  </main>

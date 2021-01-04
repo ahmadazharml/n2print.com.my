@@ -1,0 +1,55 @@
+<style>
+
+*[role="form"] {
+    max-width: 60%;
+    padding: 15px;
+    margin: 0 auto;
+    /*background-color: #fff;*/
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+</style>
+
+<div class="container">
+
+  <div class="col-lg-12 well">
+
+    <form action="checkout_login/checkout_run" method="post" class="form-horizontal" role="form">
+                <h3>Welcome to N2 Network Media! Please login.</h3>
+                <p>&nbsp;</p>
+                <span class="help-block">New member? <a href="create">Register</a> here.</span>
+                <p>&nbsp;</p>
+                <!-- /.form-group -->
+                
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                    </div>
+                </div>  
+				
+               
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                </div>
+               
+               
+              
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="submit" class="btn btn-warning btn-block">LOGIN</button>
+                        <p>&nbsp;</p>
+                        <span class="help-block"><a href="">Forgot Password?</a></span>
+                    </div>
+                </div>
+                </form>
+</div>
+  </div>

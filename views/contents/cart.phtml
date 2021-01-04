@@ -1,0 +1,188 @@
+<?php $id = Session::get('id'); ?>
+<style>
+
+*[role="form"] {
+    max-width: 60%;
+    padding: 15px;
+    margin: 0 auto;
+    /*background-color: #fff;*/
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+h3{
+    color:#1a9cb7;
+}
+
+</style>
+
+<div class="container">
+
+    <div id="cart" class="col-lg-12 well">
+
+        <h3><strong>My Cart</strong></h3>
+        <p>&nbsp;</p>
+		<label for="result">Result:</label>
+		<output id="result"></output>
+        <table id="cart" class="table table-hover table-condensed">'
+                    <thead>
+                        <tr>
+                            <th style="width:50%">Product</th>
+                            <th style="width:10%">Price</th>
+                            <th style="width:8%">Quantity</th>
+                            <th style="width:22%" class="text-center">Subtotal</th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </thead>
+                   <tbody>
+
+                   </tbody>
+                    <tfoot>
+                       <tr class="visible-xs">
+                            <td class="text-center" id="total"><strong>Total 1.99</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="<?php echo URL; ?>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                            <td colspan="2" class="hidden-xs"></td>
+                            <td id="ytotal" class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                            <td><a href="<?php echo URL; ?>checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                        </tr>
+                    </tfoot>
+                </table>
+    </div>
+</div>
+
+
+  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+  var products = [];
+        $(function () {
+            if (localStorage.products)
+            {
+                products = JSON.parse(localStorage.products);
+                showCart();
+            }
+        });
+
+
+      // mengambil data button ketika button dengan class add di click
+      $('.add').click(function(){
+
+        var id   = $(this).data("id");
+        var image = $(this).data("image");
+        var name   = $(this).data("nama");
+        var price   = $(this).data("price");
+        var quantity   = $(this).data("quantity");
+        var summary = $(this).data("summary");
+		
+		var subtotal = price * quantity;
+		
+        addToCart(id,image,name,price,quantity,summary);   //kirimkan nilai ke fungsi addToCart, berhati - hati penggunaan inserting data usahakan serverside process, ini hanya untuk pembelajaran
+
+      })
+
+      function addToCart(id,image,name,price,quantity,summary) {
+           //cek data in cart then update qty
+            for (var i in products) {
+                if(products[i].id == id)
+                {
+                    //jika data available then
+                    products[i].quantity = products[i].quantity+quantity;
+                    products[i].subtotal = subtotal * products[i].quantity;
+                    showCart(); //panggil fungsi showCart
+                    saveCart(); // panggil fungsi saveCart untuk insert data
+                    return;                  
+                }
+            
+            }
+
+
+            // jika tidak ada insert all
+
+            var item = { id:id, image:image, name:name, quantity:quantity, price:price, summary:summary}; 
+            products.push(item);
+            saveCart();
+            showCart();
+        }
+
+        function updateCart(){
+
+        }
+
+        function deleteItem(index){
+            products.splice(index,1); // hapus item berdasarkan index,
+            showCart();
+            saveCart();
+        }
+
+        function saveCart() {
+            if ( window.localStorage){
+                localStorage.products = JSON.stringify(products);
+            }
+        }
+
+        function showCart() {
+          if (products.length == 0) { //cek nilai products, jika kosong maka hidden div dengan id cart
+                $("#cart5").css("visibility", "hidden");
+                return;
+        }
+
+        $("#cart5").css("visibility", "visible"); // jika tersedia maka tampilkan 
+        $("#cartBody5").empty();
+		  
+		
+          for (var i in products) { //tampilkan data dari local storage products, template bisa anda sesuaikan
+            var item = products[i];
+
+            var subtot = item.price * item.quantity;
+	
+                     var row = '<tr data-id="' + item.id + '">'
+                            +'<td data-th="Product">'
+                                +'<div class="row">'
+                                    +'<div class="col-sm-2 hidden-xs"><img id="image" src="'+ item.image +'" alt="..." class="img-responsive"/></div>'
+                                    +'<div class="col-sm-10">'
+                                        +'<h4 class="nomargin"><span id="name2">'+ item.name +'</span></h4>'
+                                        +'<p id="summary">'+ item.summary +'</p>'
+                                    +'</div>'
+                                +'</div>'
+                            +'</td>'
+                            +'<td data-th="Price" id="price">RM'+ item.price +'</td>'
+                            +'<td data-th="Quantity">'
+                                +'<input type="number"  min="1" class="form-control text-center" id="quantity" value="' + item.quantity + '">'
+                            +'</td>'
+                            +'<td data-th="Subtotal" class="text-center" id="subtotal">RM '+ subtot +'</td>'
+                            +'<td class="actions" data-th="">'
+                                +'<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>&nbsp;'
+                                +'<button class="btn btn-danger btn-sm" onclick="deleteItem(' 
+                              + i + ')"><i class="fa fa-trash-o"></i></button>' 
+
+               +'</td>'
+                        +'</tr>';
+    
+            $("tbody").append(row); //append ul dengan id cartbody
+          }
+
+          // untuk total
+          var total = 0;
+          for(var i = 0; i < products.length; i++) {
+              total += products[i].quantity; //jumlahkan keseluruhan row subtotal dari products untuk mendapatkan total
+          }
+          document.getElementById('ytotal').innerHTML = '<label>Your Cart Total : '+ total +'  </label><br><br><br>'; 
+          //isikan div dengan id totalcart dengan nilai diatas
+        }
+		
+		 document.getElementById("quantity").addEventListener("click", function() {
+		 var result = document.getElementById("result");
+		 var nudMax = document.getElementById("quantity").value;
+         alert(nuMax);
+		 result.innerHTML = nudMax;
+		
+		});
+</script>

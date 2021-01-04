@@ -1,0 +1,389 @@
+<!-- register -->
+
+	<div class="register">
+
+		<div class="container">			
+
+			<div class="login-form-grids" style="width:90%; padding:0">
+
+ <div class="col-xl-8">
+
+          <form id="order" name="order" method="post" action="">
+
+          <section class="panel profile-user-content">
+
+                <div class="panel-body">                
+
+                    <div class="margin-bottom-50">
+
+                        <h4>Sticker Order Form</h4> 
+
+                        <p>&nbsp;&nbsp;</p>
+
+                          <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Material</label>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <select name="material" id="material" class="form-control" data-validation="[NOTEMPTY]" onchange="location = this.options[this.selectedIndex].value;">
+
+                                        <option value="">Please Select</option>
+
+                                        <option value="silverf">Bright Silver Foil</option>
+
+                                        <option value="kraft">Kraft Paper</option>
+
+                                        <option value="" selected="">Mirrorkote</option>                                        
+
+                                        <option value="transopp">Transparent OPP</option>
+
+                                        <option value="synthetic">Synthetic Sticker</option>
+
+                                        <option value="simili">Simili</option>
+
+                                        <option value="whitepp">White PP</option>                                                                              
+
+                                    </select>                       
+
+                                </div>
+
+                                
+
+                            </div>
+
+
+
+                            <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Size</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="width" type="number" class="form-control" id="width" value="50" onchange="varAlertTest()"> Width (mm)
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="height" type="number" class="form-control" id="height" value="50"onchange="varAlertTest()"> Height (mm)
+
+                                </div>
+
+                            </div>
+
+
+
+              <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Shape</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <select name="shape" id="shape" class="form-control" data-validation="[NOTEMPTY]">
+
+                                                                            <option value="Circle / Oval">Circle / Oval</option>
+
+                                                                            <option value="Square / Rectangle">Square / Rectangle</option>
+
+                                                                            <option value="Scallope">Scallope</option>
+
+                                                                            <option value="Standard">Standard</option>
+
+                                                                            <option value="Custom">Custom</option>
+
+                                                                            
+
+                                  </select>
+
+
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Printing</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                  <select name="print_option" id="print_option" class="form-control">
+
+                                      <option value="Full Color">Full Color (4C + 0C)</option>
+
+                                      <option value="Black Color">Black Color (1C + 0C)</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Quantity</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="quantity" class="form-control" id="quantity" value="1000" oninput="varAlertTest()">
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Design</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <select name="design" id="design" class="form-control">
+
+                                        <option value="1">1</option>
+
+                                        <option value="2" disabled="">2</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Method</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                  <select name="diecut" id="diecut" class="form-control">
+
+                                      <option value="Kisscut" selected="">Kisscut</option>
+
+                                      <option value="Diecut" disabled="">Diecut</option>
+
+                                  </select>
+
+                              </div> 
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Weight (kg)</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="weight" class="form-control" id="weight" value="0.73" readonly="">
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Lamination</label>
+
+                                </div>
+
+                                <div class="col-md-9">
+
+                                    <select name="lamination" id="lamination" class="form-control">
+
+                                        <option value="">No Lamination</option>
+
+                                        <option value="Gloss Lamination">Gloss Lamination</option>
+
+                                        <option value="Matt Lamination">Matt Lamination</option>
+
+                                    </select>
+
+                                </div> 
+
+                            </div>
+
+
+
+                            <div class="form-group row">
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Delivery</label>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <select name="delivery" id="delivery" class="form-control" onchange="deliveryCost()">
+
+                                      <option value="Self Collection" selected="">Self Collection</option>
+
+                                      <option value="Semenanjung Malaysia">Semenanjung Malaysia</option>
+
+                                      <option value="Sabah Sarawak">Sabah Sarawak</option>
+
+                                  </select>
+
+                                </div>                                
+
+                            </div>
+
+
+
+                            <div class="form-group row"> 
+
+                              <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Priority</label>
+
+                                </div>
+
+                              <div class="col-md-3">
+
+                                    <select name="note" id="note" class="form-control">
+
+                                      <option value="Normal">Normal</option>
+
+                                      <option value="Urgent">Urgent</option>
+
+                                      <option value="Very Urgent">Very Urgent</option>
+
+                                  </select> 
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Duration</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="duration" class="form-control" id="duration" value="5" readonly="">
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group row">                                
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Price</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="price" class="form-control" value="70.4" id="price" readonly="">
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <label class="form-control-label" for="l0">Delivery Charge</label>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <input name="delivery_charge" class="form-control" id="delivery_charge" value="0" readonly="">
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group row"> 
+
+                            
+
+                                <div class="col-md-6">
+
+                                    <input name="create" type="hidden" id="create" value="">
+
+                                    <button type="button" class="btn width-350 btn-warning" id="create_order" onchange="">Add To Cart</button>
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            </form>
+
+
+
+
+
+            
+
+        </div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<!-- //register -->
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+    // Handler for .ready() called.
+
+    $('html, body').animate({
+
+        scrollTop: $('#order').offset().top
+
+    }, 'slow');
+
+});
+
+
+
+</script>

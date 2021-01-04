@@ -1,0 +1,44 @@
+<?php $id = Session::get('id'); ?>
+<style>
+
+*[role="form"] {
+    max-width: 60%;
+    padding: 15px;
+    margin: 0 auto;
+    /*background-color: #fff;*/
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+h3{
+    color:#1a9cb7;
+}
+
+</style>
+
+<div class="container">
+
+    <div class="col-lg-12 well">
+
+        <h3><strong>My Account</strong></h3>
+        <br />
+        <a href="editacc/editacc/<?php echo $id; ?>"><span class="help-block">Edit your account information</span></a>
+        <a href=""><span class="help-block">Change your password</span></a>
+        <a href=""><span class="help-block">Modify your address book entries</span></a>
+        <a href=""><span class="help-block">Modify your wish list</span></a>
+
+        <br />
+
+        <h3><strong>My Orders</strong></h3>
+        <br />
+        <a href=""><span class="help-block">View your order history</span></a>
+        <a href=""><span class="help-block">Password</span></a>
+        <a href=""><span class="help-block">Address Book</span></a>
+        <a href=""><span class="help-block">Wish List</span></a>
+
+    </div>
+</div>
